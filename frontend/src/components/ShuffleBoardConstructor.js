@@ -2,7 +2,7 @@ import React from 'react';
 import Option from './Option';
 import utils from '../utils/utils';
 
-const ShuffleBoardConstructor = ({option, handleSuccess, handleError, triggerShuffle, shuffleCount}) => {
+const ShuffleBoardConstructor = ({option = [], handleSuccess, handleError, triggerShuffle, shuffleCount}) => {
     const allOptions = option.map((c,i) => {
         if(i === 0) {
             return (
@@ -23,8 +23,8 @@ const ShuffleBoardConstructor = ({option, handleSuccess, handleError, triggerShu
         }
     })
 
-    //this part of the component doesn't work properly yet, we have to develop a way to make him shuffle only when a correct component is clicked, and then inmmediately change this property, so that it doesn't update again.
-    const decideShuffle = shuffleCount === 0 && triggerShuffle ? true : false;
+    const decideShuffle = shuffleCount === 0 && triggerShuffle ? true : shuffleCount > 0 && triggerShuffle ? true : false;
+
     const allShuffledOptions = decideShuffle ? utils.fisherYatesShuffle(allOptions) : allOptions;
 
     const allStyledOptions = allShuffledOptions.map((c,i,a) => {
