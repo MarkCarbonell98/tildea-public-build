@@ -69,13 +69,13 @@ class Game3 extends Component {
 
 		return (
 			<div>
-				<h1 className="font-weight-light text-center mt-5">
+				<div className="p-3 text-center my-5 shadow">
 					{!isComplete ? (
-						'Click the correct word! ( if you can :P )'
-					) : (
-						'Congratulations, you have completed the level!'
+						<h1>Click the correct word! (if you can :P)</h1>
+						) : (
+						<h1>Congratulations! You completed the level!</h1>
 					)}
-				</h1>
+				</div>
 				<div className="container">
 					{
 						!isComplete && 
