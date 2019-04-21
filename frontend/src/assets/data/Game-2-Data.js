@@ -1,43 +1,51 @@
 
-export const exercise = [
+export default [
     {
-        phrase: "Vengo __ la casa de Lucía",
+        sentence: "Vengo __ la casa de Lucía",
         correct: "de",
-        incorrect: "dé"
+        incorrect: "dé",
+        id: 1
     },
     {
-        phrase: "No quiero que me __ problemas",
+        sentence: "No quiero que me __ problemas",
         correct: "dé",
-        incorrect: "de"
+        incorrect: "de",
+        id: 2
     },
     {
-        phrase: "__ jarrón es bonito",
+        sentence: "__ jarrón es bonito",
         correct: "El",
-        incorrect: "Él"
+        incorrect: "Él",
+        id: 3
     },
     {
-        phrase: "__ te dijo eso?",
+        sentence: "__ te dijo eso?",
         correct: "Él",
-        incorrect: "El"
+        incorrect: "El",
+        id: 4
     },
     {
-        phrase: "Quiero comer, ___ no cualquier cosa",
+        sentence: "Quiero comer, ___ no cualquier cosa",
         correct: "mas",
-        incorrect: "más"
+        incorrect: "más",
+        id: 5
     },
     {
-        phrase: "Me gusta ___ el verde que el rojo",
+        sentence: "Me gusta ___ el verde que el rojo",
         correct: "más",
-        incorrect: "mas"
+        incorrect: "mas",
+        id: 6
     },
     {
-        phrase: "No he hablado con __ madre hoy",
+        sentence: "No he hablado con __ madre hoy",
         correct: "mi",
-        incorrect: "mí"
+        incorrect: "mí",
+        id: 7
     },
     {
-        phrase: "A __ me gustan las mujeres",
+        sentence: "A __ me gustan las mujeres",
         correct: "mí",
-        incorrect: "mi"
+        incorrect: "mi",
+        id: 8
     },
 ]
