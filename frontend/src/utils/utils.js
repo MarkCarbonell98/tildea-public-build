@@ -1,5 +1,13 @@
 const utils = {
 
+    classToggle(e, color) {
+        e.target.classList.toggle(color);
+    },
+
+    toggleThisWordsAccent(e) {
+        e.target.textContent = this.toggleAccent(e.target.textContent);
+    },
+
     fromAccentToNormal(letter) {
         switch(letter.charCodeAt(0)) {
             case 193:
@@ -99,6 +107,14 @@ const utils = {
         }
         return word;
     },
+
+    fisherYatesShuffle(arr = []) {
+        for(let i = arr.length -1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
 }
 
 export default utils;
