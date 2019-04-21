@@ -15,7 +15,6 @@ class Game3 extends Component {
 		difficulties: Object.keys(data),
 		isComplete: false,
 		triggerShuffle: true,
-		shuffleCount: 0
 	};
 
 	handleSuccess = (e) => {
@@ -25,17 +24,23 @@ class Game3 extends Component {
 			this.setState({
 				progress: this.state.progress + 1,
 				triggerShuffle: true,
-				shuffleCount: 0
 			});
-			utils.classToggle(e, colorSuccess);
 			const { words, progress, difficulties, difficultyIndex } = this.state;
 			const ammountOfWordsInTheActualDifficultyLevel = words[difficulties[difficultyIndex]].length;
 			if (progress === ammountOfWordsInTheActualDifficultyLevel) {
-				this.setState({
-					difficultyIndex: difficultyIndex + 1,
-					progress: 0
-				});
+				if(difficulties[difficulties.length - 1] === difficulties[difficultyIndex]) {
+					this.setState({
+						isComplete: true,
+					})
+				} else {
+					this.setState({
+						difficultyIndex: difficultyIndex + 1,
+						progress: 0
+					});
+				}
 			}
+			
+			utils.classToggle(e, colorSuccess);
 		}, 400);
 	};
 
@@ -46,7 +51,6 @@ class Game3 extends Component {
 			this.setState({
 				errors: this.state.errors + 1,
 				triggerShuffle: false,
-				shuffleCount: this.state.shuffleCount + 1
 			});
 			utils.classToggle(e, colorDanger);
 		}, 400);
@@ -61,7 +65,6 @@ class Game3 extends Component {
 			difficulties,
 			difficultyIndex,
 			triggerShuffle,
-			shuffleCount
 		} = this.state;
 
 		return (
@@ -74,13 +77,16 @@ class Game3 extends Component {
 					)}
 				</h1>
 				<div className="container">
-					<ShuffleBoardConstructor
+					{
+						!isComplete && 
+						<ShuffleBoardConstructor
 						option={words[difficulties[difficultyIndex]][progress] || []}
 						handleSuccess={this.handleSuccess}
 						handleError={this.handleError}
 						triggerShuffle={triggerShuffle}
-						shuffleCount={shuffleCount}
-					/>
+						/>
+						
+					}
 				</div>
 				<Score
 					// TODO: progress only reflex the progress in the actual dificulty level

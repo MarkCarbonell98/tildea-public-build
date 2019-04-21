@@ -97,7 +97,7 @@ class Game2 extends Component {
 
         ) : (
           <div className="p-3 text-center my-5 shadow">
-            <h1>SVENJA IST DIE SCHÖNSTE FRAU DER WELT!</h1>
+            <h1>Congratulations! You completed the game!</h1>
           </div>
         );
 

@@ -22,17 +22,17 @@ const Landing = (props) => (
                         <button 
                             className="btn btn-danger mr-3"
                             onClick={() => props.history.push("/game1/1")}>
-                            1
+                            Game 1
                         </button>
                         <button 
                             className="btn btn-danger mr-3"
                             onClick={() => props.history.push("/game2/1")}>
-                            2
+                            Game 2
                         </button>
                         <button 
                             className="btn btn-danger mr-3"
                             onClick={() => props.history.push("/game3/1")}>
-                            3
+                            Game 3
                         </button>
                     </div>
                 </div>

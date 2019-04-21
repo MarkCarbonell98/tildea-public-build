@@ -28,7 +28,7 @@ const Landing = (props) => (
                 <button 
                     className="btn btn-lg btn-light btn-block my-5"
                     onClick={() => props.history.push("/dashboard")}>
-                    Go to the motherfucking Dashboard!
+                    Go to the Dashboard!
                 </button>
             </div>
         </div>
